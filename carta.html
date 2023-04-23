@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<HTML lang="pt-br">
+
+<HEAD>
+    <META charset="UTF-8">
+    <META http-equiv="X-UA-Compatible" content="IE=edge">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>Uma Carta Especial</TITLE>
+    <LINK rel="stylesheet" type="text/css" href="carta.css">
+</HEAD>
+
+<BODY>
+    <DIV id="carta">
+        <HEADER>
+            <P class="title-header">Balneário Camboriú,&nbsp;</P>
+            <P id="date" class="title-header"></P>
+            <BUTTON id="theme-toggle">Modo escuro</BUTTON>
+        </HEADER>
+        <H1>Celebração da morte de Jesus</H1>
+        <H2>O que o sacrifício dele pode representar para você?</H2>
+        <P>Convidamos você para dois eventos gratuitos:</P>
+        <ul>O discurso bíblico especial "Você pode encarar o futuro com confiança!" E,</ul>
+        <ul>A Celebração da morte de Jesus</ul>
+        <P>Todos os anos, as Testemunhas de Jeová celebram a morte de Jesus, assim como ele ordenou: "Persistam em fazer isso em memória de mim." - Lucas 22:19.</P>
+        <P>O discurso será feito por volta de uma semana antes da Celebração. Ele vai falar que é possível encarar o futuro com confiança se desenvolvermos uma amizade com Jeová Deus: uma amizade que a morte de Jesus tornou possível.</P>
+        <P>Para saber mais sobre o assunto, acesse <A href="http://www.jw.org" target="_blank" style="color: DarkMagenta"><B>"JW.ORG"</B></A>.</P>
+
+        <p>Atenciosamente,</p>
+        <p class="signature">Sílvio Luiz da Silva</p>
+    </DIV>
+
+    <script>
+        let date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let fullDate = day + "/" + month + "/" + year;
+        document.getElementById("date").innerHTML = fullDate;
+
+        const themeToggle = document.querySelector('#theme-toggle');
+
+        themeToggle.addEventListener('click', () => {
+            const body = document.querySelector('body');
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = 'Modo claro';
+            } else {
+                themeToggle.textContent = 'Modo escuro';
+            }
+        });
+    </script>
+</BODY>
+
+</HTML>
